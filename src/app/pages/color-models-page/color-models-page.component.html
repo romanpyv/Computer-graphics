@@ -1,0 +1,44 @@
+<div class="container mat-app-background">
+  <div class="controls">
+    <label class="file">Upload image
+      <input type="file" hidden value="'file'" (change)="loadImage($event)">
+    </label>
+
+    Red value:
+    <mat-slider [min]="-1" [max]="1" [step]="0.01" (change)="sliderChange($event)" [value]="0"></mat-slider>
+
+    <div class="colors">
+      <div class="rgb">
+        R: {{rgb[0]}}<br>
+        G: {{rgb[1]}}<br>
+        B: {{rgb[2]}}<br>
+      </div>
+
+      <mat-divider [vertical]="true"></mat-divider>
+
+      <div class="hsv">
+        H: {{hsv[0]}}<br>
+        S: {{hsv[1] * 100}}%<br>
+        V: {{hsv[2] * 100}}%<br>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="drawings">
+    <canvas class="red"
+            #red
+            height="700"
+            width="1400"
+            (mousedown)="showOriginal()"
+            (mouseup)="showRed()"
+            (mousemove)="showPixelData($event)"
+    ></canvas>
+    <canvas class="original"
+            #original
+            height="700"
+            width="1400"
+            (mouseup)="showRed()"
+    ></canvas>
+  </div>
+</div>

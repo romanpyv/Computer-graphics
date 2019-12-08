@@ -1,0 +1,52 @@
+<div class="container mat-app-background">
+  <div class="controls">
+    <form [formGroup]="form" class="coords-group">
+      Triangle coordinates:
+      <div class="dot-coords">
+        <mat-form-field color="accent" class="coords-input">
+          <input matInput formControlName="Ax" type="number" placeholder="Ax" (change)="initVertexes()">
+        </mat-form-field>
+
+        <mat-form-field color="accent" class="coords-input">
+          <input matInput formControlName="Ay" type="number" placeholder="Ay" (change)="initVertexes()">
+        </mat-form-field>
+      </div>
+
+      <div class="dot-coords">
+        <mat-form-field color="accent" class="coords-input">
+          <input matInput formControlName="Bx" type="number" placeholder="Bx" (change)="initVertexes()">
+        </mat-form-field>
+
+        <mat-form-field color="accent" class="coords-input">
+          <input matInput formControlName="By" type="number" placeholder="By" (change)="initVertexes()">
+        </mat-form-field>
+      </div>
+
+      <div class="dot-coords">
+        <mat-form-field color="accent" class="coords-input">
+          <input matInput formControlName="Cx" type="number" placeholder="Cx" (change)="initVertexes()">
+        </mat-form-field>
+
+        <mat-form-field color="accent" class="coords-input">
+          <input matInput formControlName="Cy" type="number" placeholder="Cy" (change)="initVertexes()">
+        </mat-form-field>
+      </div>
+    </form>
+
+    Scale:
+    <mat-slider [min]="0" [max]="500" [step]="1" [value]="0" (valueChange)="scaleChange($event); scaleTriangle();"></mat-slider>
+
+    Move:
+    <mat-slider [min]="-1000" [max]="1000" [step]="4" [value]="100" (valueChange)="moveChange($event); moveTriangle();"></mat-slider>
+
+    <button mat-raised-button color="accent" (click)="reflectTriangle()">Reflect</button>
+  </div>
+
+  <div class="drawings">
+    <canvas class="red"
+            #canvas
+            height="700"
+            width="1400"
+    ></canvas>
+  </div>
+</div>

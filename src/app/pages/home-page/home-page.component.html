@@ -1,0 +1,31 @@
+<div class="page-container">
+  <header class="header">
+    <div class="header-description">
+      <h1>Try out our<br> computer graphic features</h1>
+
+      <p class="header-description-text">
+        Here you can checkout our Fractals, <br>Shape Motion and Color Models <span class="forFree">for free</span>!
+        <br><br>
+        Just choose the topic right below and enjoy our creation!
+      </p>
+    </div>
+  </header>
+
+  <div class="body">
+    <h2 class="body-title">Choose your destiny</h2>
+
+    <div class="pages-preview-container">
+      <app-page-preview *ngFor="let preview of previews"
+                        [title]="preview.title"
+                        [ref]="preview.ref"
+                        [imgUrl]="preview.imageUrl"
+                        [gifUrl]="preview.gifUrl"
+                        [state]="preview.state"
+                        [content]="preview.content"
+                        (click)="closeOther(preview)"
+      >
+        {{preview.mainContent}}
+      </app-page-preview>
+    </div>
+  </div>
+</div>

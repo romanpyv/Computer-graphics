@@ -1,0 +1,35 @@
+<ng-container [ngSwitch]="state">
+  <ng-container *ngSwitchCase="'closed'">
+    <div class="container-closed" *ngIf="animationFinished">
+      <div class="img-wrapper-closed">
+        <img [src]="imgUrl" alt="">
+      </div>
+
+      <div class="content-closed">
+        <h2>{{title}}</h2>
+
+        <p>
+          {{content}}
+        </p>
+      </div>
+    </div>
+  </ng-container>
+
+  <div *ngSwitchCase="'opened'"  [@openClose] class="container-opened">
+    <h2>{{title}}</h2>
+
+    <div class="content-opened">
+      <div class="gif-wrapper">
+        <img [src]="gifUrl" alt="gif" class="gif">
+      </div>
+
+      <div class="text">
+        <p>
+          <ng-content></ng-content>
+        </p>
+
+        <button mat-raised-button color="accent" [routerLink]="[ref]">Check out</button>
+      </div>
+    </div>
+  </div>
+</ng-container>

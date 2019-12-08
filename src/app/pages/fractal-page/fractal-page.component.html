@@ -1,0 +1,35 @@
+<div class="container mat-app-background">
+  <div class="body">
+    <form [formGroup]="form" class="controls" (ngSubmit)="submit()">
+      <mat-form-field color="accent">
+        <mat-select formControlName="func" placeholder="Function" (selectionChange)="changeFunc($event)">
+          <mat-option *ngFor="let opt of functions" [value]="opt.value">{{opt.label}}</mat-option>
+        </mat-select>
+
+        <mat-error *ngIf="form.controls.func.hasError('required')">Field is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field color="accent">
+        <mat-select formControlName="color" placeholder="Color scheme" (selectionChange)="changeColor($event)">
+          <mat-option *ngFor="let opt of colorSchemes" [value]="opt.func">{{opt.label}}</mat-option>
+        </mat-select>
+
+        <mat-error *ngIf="form.controls.color.hasError('required')">Field is required</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="accent" type="submit" class="submit">Build fractal</button>
+    </form>
+
+    <div class="drawings">
+      <canvas class="fractal" #fractalCanvas height="700" width="1400"></canvas>
+      <canvas class="scoping"
+              #scopingCanvas
+              height="700"
+              width="1400"
+              (mousedown)="mousedown($event)"
+              (mousemove)="mousemove($event)"
+              (mouseup)="mouseup()"
+      ></canvas>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+.container {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 20px 64px 0;
+	color: white;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.logo-container {
+	width: 130px;
+	height: 110px;
+}
+
+.logo {
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+
+.nav-container {
+	display: flex;
+	font-weight: bolder;
+	width: 40%;
+	justify-content: space-between;
+}
+
+.nav-item {
+	cursor: pointer;
+	height: 24px;
+	font-weight: normal;
+}
+
+.active{
+	font-weight: bold;
+	color: #d89f18;
+}
+
+.nav-item:checked {
+	color: #d89f18;
+}

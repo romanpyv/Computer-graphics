@@ -1,0 +1,49 @@
+.page-container {
+	background: #21232e;
+	padding-bottom: 114px;
+}
+
+.header {
+	height: 70vh;
+	background-image: url("../../../assets/m-h-night.jpg");
+	background-clip: border-box;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 0 0 252px;
+	color: white;
+}
+
+.header-description {
+	padding: 148px 64px 0;
+}
+
+h1 {
+	padding-bottom: 24px;
+}
+
+.forFree {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.header-description-text {
+	font-size: 20px;
+}
+
+.pages-preview-container {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 64px;
+	flex-wrap: wrap;
+}
+
+.body-title {
+	color: white;
+	text-align: center;
+	padding-top: 24px;
+}
+
+.footer {
+	margin-top: 48px;
+}
