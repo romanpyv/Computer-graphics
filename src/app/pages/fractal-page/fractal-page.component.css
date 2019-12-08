@@ -1,0 +1,73 @@
+.container {
+	background: #21232e;
+	height: 100vh;
+	padding-top: 148px;
+}
+
+.body {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 64px;
+}
+
+.controls {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-top: 48px;
+	color: #ffd740;
+}
+
+.submit{
+	margin-top: 20px;
+}
+
+.drawings{
+	width: 80%;
+	height: 65vh;
+	background: rgba(1, 1, 1, .2);
+	position: relative;
+}
+
+.drawings canvas{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.scoping{
+	z-index: 1;
+}
+
+::ng-deep .mat-form-field-label {
+	/*change color of label*/
+	color: white !important;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+	/*change color of label*/
+	color: #ffd740 !important;
+}
+
+::ng-deep .mat-select-invalid {
+	/*change color of label*/
+	color: red !important;
+}
+
+
+::ng-deep.mat-form-field-underline {
+	/*change color of underline*/
+	background-color: white !important;
+}
+
+::ng-deep .mat-select-arrow {
+	/*change arrow color*/
+	color: white;
+}
+
+::ng-deep .mat-select-value {
+	/*change select color*/
+	color: #ffd740;
+}
